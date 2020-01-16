@@ -1,0 +1,31 @@
+<!-- <h1>{{titulo}}, Cantidad de veces pulsadas {{probando}} </h1>
+<button  (click)="cambiar()">Clickia</button>  -->
+
+
+
+
+<app-slider [size]="'small'" [nombre]="'Peliculas'"></app-slider>
+
+<div class="center">
+  <section id="content">
+    <div id="favorita" *ngIf="peliFavorita">
+      <h2 class="subheader"> Película Favorita</h2>
+     <h4>{{peliFavorita.tittle}} {{peliFavorita.year}}</h4> 
+    </div>
+   <!-- agrego un comentario asdasdas
+  
+  
+  weawa -->
+
+<h1 class="subheader">Películas</h1>
+
+    <div id="articles" *ngIf="peliculas">
+
+      <div *ngFor="let pelicula of peliculas ; let i = index" class="article-item" >
+      <app-pelicula [pelicula]="pelicula" (peliFavorita)="marcarFavorita($event)"></app-pelicula>
+    </div>
+    </div>
+
+  </section>
+  <app-sidebar></app-sidebar>
+</div>
