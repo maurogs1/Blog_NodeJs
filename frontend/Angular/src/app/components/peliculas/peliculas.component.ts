@@ -12,11 +12,11 @@ export class PeliculasComponent implements OnInit{
   public titulo: string;
   public peliculas: Array<Pelicula>;
   public peliFavorita: Pelicula;
-
+  public fecha: any;
  
   constructor() { 
     this.titulo = "hola soy el titulo";
-    
+    this.fecha = new Date(2020,8,12);
     
 
     this.peliculas = [

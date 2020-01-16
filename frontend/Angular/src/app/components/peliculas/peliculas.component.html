@@ -10,13 +10,9 @@
   <section id="content">
     <div id="favorita" *ngIf="peliFavorita">
       <h2 class="subheader"> Película Favorita</h2>
-     <h4>{{peliFavorita.tittle}} {{peliFavorita.year}}</h4> 
+     <h4>{{peliFavorita.tittle | uppercase}} {{peliFavorita.year | date: 'dd/MM/yyyy' | espar}} </h4> 
+     <h5>{{fecha }}</h5>
     </div>
-   <!-- agrego un comentario asdasdas
-  
-  
-  weawa -->
-
 <h1 class="subheader">Películas</h1>
 
     <div id="articles" *ngIf="peliculas">
@@ -25,7 +21,7 @@
       <app-pelicula [pelicula]="pelicula" (peliFavorita)="marcarFavorita($event)"></app-pelicula>
     </div>
     </div>
-
+ 
   </section>
   <app-sidebar></app-sidebar>
 </div>
