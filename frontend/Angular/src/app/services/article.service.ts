@@ -7,10 +7,6 @@ import { Global } from './global';
 
 @Injectable()
 export class ArticleService {
-
-
-
-    public ruta: string;
     public url: string;
     
     
