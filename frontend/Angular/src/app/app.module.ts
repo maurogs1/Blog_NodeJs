@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { appRoutingProviders, routing} from './app.routing';
- 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MiComponente } from './components/mi-componente.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
@@ -42,7 +42,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

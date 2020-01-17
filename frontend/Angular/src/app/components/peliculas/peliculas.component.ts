@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Pelicula } from '../../models/pelicula';
+import { PeliculaService } from '../../services/pelicula.service';
+
 
 @Component({
   selector: 'app-peliculas',
   templateUrl: './peliculas.component.html',
-  styleUrls: ['./peliculas.component.css']
+  styleUrls: ['./peliculas.component.css'],
+  providers: [PeliculaService]
 })
 export class PeliculasComponent implements OnInit{
 
@@ -14,20 +17,17 @@ export class PeliculasComponent implements OnInit{
   public peliFavorita: Pelicula;
   public fecha: any;
  
-  constructor() { 
+  constructor(
+    private _peliculaService: PeliculaService
+  ) { 
     this.titulo = "hola soy el titulo";
     this.fecha = new Date(2020,8,12);
-    
-
-    this.peliculas = [
-        new Pelicula("Spiderman", 2019, "../../../assets/images/spiderman.jpg"),
-        new Pelicula("Superman", 2919, "../../../assets/images/superman.jpg"),
-        new Pelicula("No sé",2010,"../../../assets/images/maxresdefault.jpg"),
-    ];
+    this.peliculas = this._peliculaService.getPeliculas();
   }
 
   ngOnInit() {
-    console.log("ng oninit lanzado...");
+
+    console.log(this._peliculaService.holaMundo());
   }
 
   marcarFavorita(event){
