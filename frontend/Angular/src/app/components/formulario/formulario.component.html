@@ -38,6 +38,13 @@
       <div class="clearfix"></div>
       <input type="submit" value="enviar" class="btn btn-success" >
     </form>
+
+    <h2 class="subheader">Eventos</h2>
+    <div>
+      <button (click)="hacerClick()">Clicki</button>
+      <input type="text" [(ngModel)]="campo" (blur)="salir()" (keyup.enter)="salir()">
+      {{campo}}
+    </div>
   </section>
   <app-sidebar></app-sidebar>
 </div>
