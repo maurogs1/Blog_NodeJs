@@ -7,9 +7,13 @@ import { Global } from './global';
 
 @Injectable()
 export class ArticleService {
+
+
+
+    public ruta: string;
     public url: string;
-
-
+    
+    
     constructor(private _http: HttpClient)
     {this.url = Global.url;}
 
