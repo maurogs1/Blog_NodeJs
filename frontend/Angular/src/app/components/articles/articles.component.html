@@ -1,0 +1,19 @@
+<div class="loading" *ngIf="!articles">
+Cargando....
+</div>
+
+<div id="articles" *ngIf="articles">
+    <article class="article-item" *ngFor="let article of articles">
+      <div class="image-wrap">
+          <img *ngIf="article.image" src="{{url+'get-image/'+article.image}} " alt="React">
+          <img *ngIf="!article.image" src="../../../assets/images/no-image.jpg" alt="React">
+      </div>
+       <h1 class="subheader"> {{article.title}} </h1>   
+       <span class="date">
+          {{article.date | amLocale: 'es' | amTimeAgo}}
+       </span>
+    
+       <div id="clearfix" class="clearfix"></div>
+  </article>
+</div>
+  
