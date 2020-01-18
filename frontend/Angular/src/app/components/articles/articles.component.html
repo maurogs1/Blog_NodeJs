@@ -12,6 +12,7 @@ Cargando....
        <span class="date">
           {{article.date | amLocale: 'es' | amTimeAgo}}
        </span>
+       <a [routerLink]="['/blog/articulo', article._id ]"> Leer más</a>
     
        <div id="clearfix" class="clearfix"></div>
   </article>

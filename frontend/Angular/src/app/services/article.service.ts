@@ -8,13 +8,22 @@ import { Global } from './global';
 @Injectable()
 export class ArticleService {
     public url: string;
-    
+    public articles: string;
     
     constructor(private _http: HttpClient)
     {this.url = Global.url;}
 
-    getArticles():Observable<any>{
-        return this._http.get(this.url+'articles');
+    getArticles(last: any = null):Observable<any>{
+
+        this.articles = "articles";
+        if(last != null){
+            this.articles = "articles/true"        
+        }
+        return this._http.get(this.url+this.articles);
+    }
+
+    getArticle(articleId):Observable<any>{
+        return this._http.get(this.url+'article/'+articleId);
     }
 
 }

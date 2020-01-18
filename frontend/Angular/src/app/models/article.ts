@@ -6,5 +6,4 @@ export class Article{
         public image: string,
         public date: any
         ){}
-
 }

@@ -21,6 +21,7 @@ import { EsParPipe } from './pipes/espar.pipe';
 import { FormsModule } from '@angular/forms';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { MomentModule } from 'angular2-moment';
+import { ArticleComponent } from './components/article/article.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { MomentModule } from 'angular2-moment';
     ErrorComponent,
     PeliculaComponent,
     EsParPipe,
-    ArticlesComponent
+    ArticlesComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

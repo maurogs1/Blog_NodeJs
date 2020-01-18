@@ -30,6 +30,7 @@ export class BlogComponent implements OnInit {
 
           if(response.articles){
             console.log("Artículos cargados correctamente...");
+          
             this.articles = response.articles;
           }
        

@@ -1,0 +1,29 @@
+    
+    <div class="center">
+      <section id="content">
+        <h1 class="subheader">Nombre Artículo</h1>    
+        <article class="article-item article-detail" >
+            <div class="image-wrap">
+                <img *ngIf="!article.image"  src="../../../assets/images/no-image.jpg" alt="error">
+
+                <img *ngIf="article.image" src="{{url+'get-image/'+article.image}} " alt="React">
+            </div>
+
+
+             <h1 class="subheader">{{article.title}}</h1>   
+             <span class="date">
+                   {{article.date | amLocale: 'es' | amTimeAgo}}
+             </span>
+             <p> 
+                 {{article.content}}
+             </p>
+
+             <div id="clearfix" class="clearfix"></div>
+        </article>
+      </section>
+    
+      <app-sidebar></app-sidebar>
+    </div>
+    
+    
+    
