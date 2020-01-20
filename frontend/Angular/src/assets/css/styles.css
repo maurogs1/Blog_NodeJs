@@ -181,6 +181,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', end
 }
 
 .btn{
+    text-align: center;
     display: block;
     background: black;
     color: white;
@@ -202,6 +203,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', end
 
 .btn-success{
     background: green;
+
+}
+
+.buttons{
+    margin-top: 30px;
+}
+.btn-warning{
+    background: rgba(255, 174, 0, 0.726);
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-warning:hover , .btn-danger:hover{
+    transition: all 300ms;
+    opacity: 0.8;
+}
+
+
+.btn-danger{
+    background: rgb(128, 0, 90);
+    color: white !important;
+    text-decoration: none;
 
 }
 .btn-success:hover{

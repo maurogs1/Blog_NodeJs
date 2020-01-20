@@ -9,6 +9,7 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ArticleComponent } from './components/article/article.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     {path: 'peliculas', component: PeliculasComponent},
     {path: 'pagina/:nombre/:apellido', component: PaginaComponent},
     {path: 'pagina', component: PaginaComponent},
+    {path: 'buscar/:search', component: SearchComponent},
     {path: '**', component: ErrorComponent}
 
 ];

@@ -26,4 +26,9 @@ export class ArticleService {
         return this._http.get(this.url+'article/'+articleId);
     }
 
+    search(searchString):Observable<any>{
+        console.log("se muestra: "+searchString);
+                return this._http.get(this.url+'search/'+searchString);
+    }
+
 }

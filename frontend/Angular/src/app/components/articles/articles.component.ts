@@ -10,6 +10,7 @@ import { Global } from '../../services/global';
 export class ArticlesComponent implements OnInit {
 
   @Input() articles: Array<Article>;
+  
   public url: string;
 
 
@@ -21,6 +22,7 @@ export class ArticlesComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log(this.articles);
   }
 
   obtenerImagen(){
