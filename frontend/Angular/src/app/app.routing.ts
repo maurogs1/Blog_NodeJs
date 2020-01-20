@@ -11,6 +11,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
 import { NuevoArticuloComponent } from './components/nuevo-articulo/nuevo-articulo.component';
+import { ArticleEditComponent } from './components/article-edit/article-edit.component';
 
 
 
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     {path: 'pagina', component: PaginaComponent},
     {path: 'crear-articulo', component: NuevoArticuloComponent},
     {path: 'buscar/:search', component: SearchComponent},
+    {path: 'blog/editar/:id', component: ArticleEditComponent},
     {path: '**', component: ErrorComponent}
 
 ];

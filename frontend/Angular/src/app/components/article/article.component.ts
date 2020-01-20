@@ -46,11 +46,7 @@ export class ArticleComponent implements OnInit {
               console.log(error);
             }
           )
-
       });
-
-    
-
   }
 
 }

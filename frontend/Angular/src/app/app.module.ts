@@ -25,6 +25,7 @@ import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
 import { NuevoArticuloComponent } from './components/nuevo-articulo/nuevo-articulo.component';
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { ArticleEditComponent } from './components/article-edit/article-edit.component';
 
 @NgModule({
   //Acá se pone el nombre de la clase con la que exporto
@@ -47,7 +48,8 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     ArticlesComponent,
     ArticleComponent,
     SearchComponent,
-    NuevoArticuloComponent
+    NuevoArticuloComponent,
+    ArticleEditComponent
   ],
   imports: [
     BrowserModule,
