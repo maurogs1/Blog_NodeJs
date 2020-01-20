@@ -6,8 +6,8 @@ var ArticleController = require('../controllers/article');
 var router = express.Router();
 
 var multipar = require('connect-multiparty');
-var md_upload = multipar({ uploadDir: '/upload/articles' });
-var md_ruta = multipar({ uploadDir: '/upload/imagenes' });
+var md_upload = multipar({ uploadDir: './upload/articles' });
+var md_ruta = multipar({ uploadDir: './upload/imagenes' });
 //Rutas de pruebas
 router.get('/test-de-controlador', ArticleController.test);
 router.post('/datos-cursp', ArticleController.datosCuros);
