@@ -234,57 +234,65 @@ var controller = {
     },
 
     upload: (req, res)=> {
+
+
+
+        return res.status(404).send({
+            status: 'error',
+            message: 'asdasdas'
+        });
         //Configurar el módulo connect multiparty router/article.js
+        // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+req.files.file0);
+        // //recoger el fichero de la petición 
+        // var file_name = 'Imagen no subida';
+        // if(!req.files){
+        //     return res.status(404).send({
+        //         status:'error',
+        //         message: file_name
+        //     });
+        // }
 
-        //recoger el fichero de la petición 
-        var file_name = 'Imagen no subida';
-        if(!req.files){
-            return res.status(404).send({
-                status:'error',
-                message: file_name
-            });
-        }
+        // //nombre del archivos
+    
+        // var file_path = req.files.file0.path;            
+        // var file_split = file_path.split('\\');
 
-        //nombre del archivos
-        var file_path = req.files.file0.path;            
-        var file_split = file_path.split('\\');
+        // // la extención del archivo
+        // var file_namee = file_split[2];
+        // var extension_split = file_namee.split('\.');
+        // var file_ext = extension_split[1];
 
-        // la extención del archivo
-        var file_namee = file_split[2];
-        var extension_split = file_namee.split('\.');
-        var file_ext = extension_split[1];
-
-        //comprobar la extensión del archivo (sólo imágenes), si no lo son, borrarla
-        if(file_ext != 'png' && file_ext != 'jpg' && file_ext != 'jpeg' && file_ext != 'gif' ){
+        // //comprobar la extensión del archivo (sólo imágenes), si no lo son, borrarla
+        // if(file_ext != 'png' && file_ext != 'jpg' && file_ext != 'jpeg' && file_ext != 'gif' ){
             
-            fs.unlink(file_path, (err)=>{
-                return res.status(200).send({
-                    status: 'error',
-                    message: ' La extensión de la imágen no es válidad'
-                });
-            });
-            //Borrar el archivo subido para que no se quede en la carpeta 
-        }else{
-            //id de la url
-            var articleId = req.params.id;
-         Article.findOneAndUpdate({ _id: articleId}, {image: file_namee}, {new: true}, (err, articleUpdated) =>{
-            if(err || !articleUpdated){
-                return res.status(400).send({
-                    status: 'error',
-                    message: 'Error al guardar la imágen'
-                });
-            }
+        //     fs.unlink(file_path, (err)=>{
+        //         return res.status(200).send({
+        //             status: 'error',
+        //             message: ' La extensión de la imágen no es válidad'
+        //         });
+        //     });
+        //     //Borrar el archivo subido para que no se quede en la carpeta 
+        // }else{
+        //     //id de la url
+        //     var articleId = req.params.id;
+        //  Article.findOneAndUpdate({ _id: articleId}, {image: file_namee}, {new: true}, (err, articleUpdated) =>{
+        //     if(err || !articleUpdated){
+        //         return res.status(400).send({
+        //             status: 'error',
+        //             message: 'Error al guardar la imágen'
+        //         });
+        //     }
 
 
-            return res.status(200).send({            
-                status: 'success',
-                article: articleUpdated
-            });
+        //     return res.status(200).send({            
+        //         status: 'success',
+        //         article: articleUpdated
+        //     });
     
 
-         });
+        //  });
             
-                }
+        //         }
     },
 
 
