@@ -22,7 +22,6 @@ export class ArticlesComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.articles);
   }
 
   obtenerImagen(){
