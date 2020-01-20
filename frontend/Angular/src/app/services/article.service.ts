@@ -31,4 +31,13 @@ export class ArticleService {
                 return this._http.get(this.url+'search/'+searchString);
     }
 
+    create(article):Observable<any>{
+        //Convierto el objeto javascript en un JSON para usarlo como parámetro en la petición hhtp
+
+        let params = JSON.stringify(article);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.post(this.url+'save',params,{headers: headers});
+    }
+
+
 }

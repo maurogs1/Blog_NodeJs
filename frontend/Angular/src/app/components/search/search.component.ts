@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute, Params} from '@angular/router';
 import { ArticleComponent } from '../article/article.component';
 import { ArticleService } from '../../services/article.service';

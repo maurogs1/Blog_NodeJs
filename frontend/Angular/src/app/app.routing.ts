@@ -10,6 +10,7 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
+import { NuevoArticuloComponent } from './components/nuevo-articulo/nuevo-articulo.component';
 
 
 
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
     {path: 'peliculas', component: PeliculasComponent},
     {path: 'pagina/:nombre/:apellido', component: PaginaComponent},
     {path: 'pagina', component: PaginaComponent},
+    {path: 'crear-articulo', component: NuevoArticuloComponent},
     {path: 'buscar/:search', component: SearchComponent},
     {path: '**', component: ErrorComponent}
 

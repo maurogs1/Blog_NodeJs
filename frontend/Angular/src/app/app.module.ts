@@ -23,7 +23,8 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { MomentModule } from 'angular2-moment';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
-
+import { NuevoArticuloComponent } from './components/nuevo-articulo/nuevo-articulo.component';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 @NgModule({
   //Acá se pone el nombre de la clase con la que exporto
@@ -45,11 +46,13 @@ import { SearchComponent } from './components/search/search.component';
     EsParPipe,
     ArticlesComponent,
     ArticleComponent,
-    SearchComponent
+    SearchComponent,
+    NuevoArticuloComponent
   ],
   imports: [
     BrowserModule,
     routing,
+    AngularFileUploaderModule,
     FormsModule,
     HttpClientModule,
     MomentModule

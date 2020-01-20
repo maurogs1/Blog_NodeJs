@@ -49,7 +49,12 @@ var controller = {
             //le asigno los valores
             article.title = params.title;
             article.content = params.content;
-            article.image = null;
+            if(params.image){
+             article.image = params.image;   
+            }else{
+                article.image = null;
+            }
+            
 
             //guardo el artìculo en la bd
 
@@ -272,6 +277,8 @@ var controller = {
         }else{
             //id de la url
             var articleId = req.params.id;
+
+            if(articleId){
          Article.findOneAndUpdate({ _id: articleId}, {image: file_namee}, {new: true}, (err, articleUpdated) =>{
             if(err || !articleUpdated){
                 return res.status(400).send({
@@ -289,7 +296,13 @@ var controller = {
 
          });
             
+                }else{
+                    return res.status(200).send({
+                        status: 'success',
+                        image: file_namee
+                    });
                 }
+            }
     },
 
 
