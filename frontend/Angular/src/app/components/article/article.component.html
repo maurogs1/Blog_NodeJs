@@ -1,12 +1,12 @@
     
     <div class="center">
       <section id="content">
-        <h1 class="subheader">Nombre Artículo</h1>    
+        <h1 class="subheader">{{article.title}}</h1>    
         <article class="article-item article-detail" >
             <div class="image-wrap">
                 <img *ngIf="!article.image"  src="../../../assets/images/no-image.jpg" alt="error">
 
-                <img *ngIf="article.image" src="{{url+'get-image/'+article.image}} " alt="React">
+                <img *ngIf="article.image" src="{{url+'get-image/'+article.image}}" alt="React">
             </div>
 
 

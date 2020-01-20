@@ -273,7 +273,9 @@ textarea{
     border: 1px solid #ccc;
 }
 .article-item .image-wrap img{
-    height: 100%;
+    height: 300px;
+    width: 350px;
+
     text-align: center;
 }
 

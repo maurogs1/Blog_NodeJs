@@ -16,11 +16,14 @@ export class ArticlesComponent implements OnInit {
 
   constructor() { 
 
-    this.url = Global.url;
+    this.url = "http://localhost:3900/curso/";
   }
 
 
   ngOnInit() {
   }
 
+  obtenerImagen(){
+
+  }
 }
