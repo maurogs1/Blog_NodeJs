@@ -54,10 +54,7 @@ var controller = {
             }else{
                 article.image = null;
             }
-            
-
             //guardo el artìculo en la bd
-
             article.save((err, articleStored) => {
                 if (err || !articleStored) {
                     return res.status(404).send({
@@ -211,7 +208,6 @@ var controller = {
     delete: (req, res) => {
         //Obtener el id de la url
         var articleId = req.params.id;
-
         // buscar y borrar por ese id
         Article.findByIdAndDelete({_id: articleId}, (err, articleRemoved)=>{
             if(err){
@@ -220,7 +216,6 @@ var controller = {
                     message: 'Error al borrar'
                 });
             }
-
             if(!articleRemoved){
                 return res.status(404).send({
                     status: 'error',
@@ -231,9 +226,6 @@ var controller = {
                 status: 'success',
                 article: articleRemoved
             });
-
-
-
         });
 
     },

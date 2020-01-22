@@ -1,7 +1,7 @@
     
     <div class="center">
       <section id="content">
-        <h1 class="subheader">{{article.title}}</h1>    
+        <h1 *ngIf="article" class="subheader">{{article.title}}</h1>    
         <article class="article-item article-detail" *ngIf="article" >
             <div class="image-wrap">
                 <img *ngIf="!article.image"  src="../../../assets/images/no-image.jpg" alt="error">
@@ -19,8 +19,8 @@
              </p>
 
              <div class="buttons">
-             <a href="" class="btn btn-warning"   [routerLink]="['/blog/editar', article._id]">Editar </a>
-             <a href="" class="btn btn-danger"> Borrar</a>
+             <a class="btn btn-warning"   [routerLink]="['/blog/editar', article._id]">Editar </a>
+             <a   class="btn btn-danger" (click)="delete(article._id)"> Borrar</a>
             </div>
              <div id="clearfix" class="clearfix"></div>
         </article>

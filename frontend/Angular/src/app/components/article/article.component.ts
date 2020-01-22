@@ -3,7 +3,9 @@ import { ArticleService } from '../../services/article.service';
 import { Article } from '../../models/article';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Global } from '../../services/global';
-
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 
 @Component({
   selector: 'app-article',
@@ -26,7 +28,41 @@ export class ArticleComponent implements OnInit {
       }
 
   ngOnInit() { 
-   
+   this.getArticles();
+  }
+
+  delete(id){
+
+    swal({
+      title: "Estás seguro?",
+      text: "Una vez borrado no podrás recurparlo",
+      icon: "warning",
+      buttons: [true, true],
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {       
+  
+    this._articleService.delete(id).subscribe( response => {
+      this._router.navigate(['/blog']);
+       },
+       error =>{
+         this._router.navigate(['/blog']);
+       });
+
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
+    
+
+
+  }
+
+  getArticles(){
     
     this._route.params.subscribe(
       data => {
@@ -48,5 +84,4 @@ export class ArticleComponent implements OnInit {
           )
       });
   }
-
-}
+  }

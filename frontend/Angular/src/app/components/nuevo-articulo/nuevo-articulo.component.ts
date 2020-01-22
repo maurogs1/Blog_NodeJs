@@ -3,7 +3,10 @@ import { Article } from '../../models/article';
 import { ArticleService } from '../../services/article.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Global } from '../../services/global';
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
 
+const swal: SweetAlert = _swal as any;
 @Component({
   selector: 'app-nuevo-articulo',
   templateUrl: './nuevo-articulo.component.html',
@@ -16,6 +19,7 @@ export class NuevoArticuloComponent implements OnInit {
   public status: string;
   public titulo: string;
   public url: string;
+  public isEdit: boolean = false;
 
 
 
@@ -54,11 +58,22 @@ export class NuevoArticuloComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
+    this.crearArticulo();
+  }
+
+  subirImagen(event){
+    let image_data = JSON.parse(event.response);
+    this.article.image = image_data.image;
+  }
+
+  crearArticulo(){
     this._articleService.create(this.article).subscribe(response => {
       if (response.status == 'success') {
         this.status = response.status;
-        this.article = response.article;
-        alert("Artículo creado correctamente!")
+        this.article = response.article;        
+        swal(
+          'Artículo creado', 'El artículo se ha creado correctamente', 'success'
+        )
         this._router.navigate(['/blog']);
       }
     }, error => {
@@ -66,8 +81,4 @@ export class NuevoArticuloComponent implements OnInit {
     });
   }
 
-  subirImagen(event){
-    let image_data = JSON.parse(event.response);
-    this.article.image = image_data.image;
-  }
 }

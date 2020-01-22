@@ -8,10 +8,12 @@ import { Global } from './global';
 @Injectable()
 export class ArticleService {
     public url: string;
+    public url2: string;
     public articles: string;
     
     constructor(private _http: HttpClient)
-    {this.url = Global.url;}
+    {this.url = Global.url;
+    this.url2 = "http://localhost:3900/curso/"}
 
     getArticles(last: any = null):Observable<any>{
 
@@ -46,6 +48,7 @@ export class ArticleService {
     }
 
     delete(id):Observable<any>{
+        console.log(this.url+'article/'+id);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         return this._http.delete(this.url+'article/'+id,{headers: headers});
     }
