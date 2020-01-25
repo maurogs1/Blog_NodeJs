@@ -3,12 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  var nombre = 'Mauro saravia';
+var presentacion = <h1>Yo soy {nombre} </h1>
+
+
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {presentacion}
         </p>
         <a
           className="App-link"
