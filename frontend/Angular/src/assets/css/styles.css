@@ -12,9 +12,8 @@ body{
     
     height: 120px;
     width: 100%;
-    background: white;
-    border-bottom: 1px solid #ccc;
-    border-top: 5px solid #61dafb;
+    background: rgb(32, 32, 32);
+    
 }
 
 .center{
@@ -64,9 +63,7 @@ body{
 }
 
 #menu ul{
-    line-height: 85px;
-    width: 60%;
-    float: right;
+    width: 50%;
 }
 
 #menu ul li{
@@ -78,7 +75,7 @@ body{
 }
 #menu a {
     text-decoration: none;
-    color: #444;
+    color: white;
     transition: 300ms all;
 }
 
